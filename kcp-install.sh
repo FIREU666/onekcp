@@ -1428,7 +1428,7 @@ pre_install_kcptun_for_ss_ssr(){
 uninstall_kcptun_for_ss_ssr(){
     Get_Dist_Name
     fun_clangcn "clear"
-    def_Uninstall_Select="4"
+    def_Uninstall_Select="5"
     echo -e "${COLOR_YELOW}You have 5 options for your kcptun/ss/ssr Uninstall${COLOR_END}"
 #    echo "1: Uninstall Shadowsocks-libev"
 #    echo "2: Uninstall ShadowsocksR(python)"
