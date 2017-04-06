@@ -3,8 +3,8 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 #===============================================================================================
 #   System Required:  CentOS Debian or Ubuntu (32bit/64bit)
-#   Description:  A tool to auto-compile & install KCPTUN for SS/SSR on Linux
-#   Intro: https://github.com/onekeyshell/kcptun_for_ss_ssr/issues
+#   Description:  Onekey to install KCPTUN for SS/SSR on Linux
+#   Intro:                 @FIREU666
 #===============================================================================================
 version="1.9.9"
 if [ $(id -u) != "0" ]; then
@@ -35,14 +35,14 @@ shell_update(){
         fi
     fi
 }
-shell_download_link="https://raw.githubusercontent.com/FIREU666/onekey-kcp/master/kcp-install.sh"
-program_version_link="https://raw.githubusercontent.com/FIREU666/onekey-kcp/master/version.sh"
+shell_download_link="https://raw.githubusercontent.com/FIREU666/onekcp/master/kcp-install.sh"
+program_version_link="https://raw.githubusercontent.com/FIREU666/onekcp/master/version.sh"
 ss_libev_config="/etc/shadowsocks-libev/config.json"
 ssr_config="/usr/local/shadowsocksR/shadowsocksR.json"
 kcptun_config="/usr/local/kcptun/config.json"
 # Check if user is root
 
-contact_us="https://github.com/onekeyshell/kcptun_for_ss_ssr/issues"
+contact_us="@FIREU666"
 fun_clangcn(){
     local clear_flag=""
     clear_flag=$1
@@ -53,7 +53,7 @@ fun_clangcn(){
     echo "+----------------------------------------------------------------+"
     echo "|                KCPTUN for SS/SSR on Linux Server               |"
     echo "+----------------------------------------------------------------+"
-    echo "|  A tool to auto-compile & install KCPTUN for SS/SSR on Linux   |"
+    echo "|  Onekey to install KCPTUN for SS/SSR on Linux   |"
     echo "+----------------------------------------------------------------+"
     echo "| Intro: ${contact_us} |"
     echo "+----------------------------------------------------------------+"
@@ -1433,8 +1433,8 @@ uninstall_kcptun_for_ss_ssr(){
 #    echo "1: Uninstall Shadowsocks-libev"
 #    echo "2: Uninstall ShadowsocksR(python)"
     echo "3: Uninstall KCPTUN"
-    echo "4: Uninstall All [default]"
-    echo "5: Exit,cancell uninstall"
+    echo "4: Uninstall All"
+    echo "5: Exit,cancell uninstall [default]"
     read -p "Enter your choice (1, 2, 3, ... or exit. default [${def_Uninstall_Select}]): " Uninstall_Select
     case "${Uninstall_Select}" in
     1)
