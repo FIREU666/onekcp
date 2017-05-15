@@ -539,8 +539,8 @@ EOF
     "crypt": "${set_kcptun_method}",
     "mode": "${set_kcptun_mode}",
     "mtu": ${set_kcptun_mtu},
-    "sndwnd": 1024,
-    "rcvwnd": 1024,
+    "sndwnd": 2048,
+    "rcvwnd": 2048,
     "nocomp": ${set_kcptun_nocomp}
 }
 EOF
@@ -1207,11 +1207,11 @@ pre_install_kcptun_for_ss_ssr(){
         echo
         def_kcptun_pwd="666666"
         echo "Please input password for kcptun"
-        read -p "(Default password: ${def_kcptun_pwd}):" set_kcptun_pwd
+        read -p "(Default password:random):" set_kcptun_pwd
         [ -z "${set_kcptun_pwd}" ] && set_kcptun_pwd="${def_kcptun_pwd}"
         echo
         echo "---------------------------------------"
-        echo "kcptun password = ${set_kcptun_pwd}"
+        echo "kcptun password ="
         echo "---------------------------------------"
         echo
         # Set kcptun port
@@ -1360,7 +1360,7 @@ pre_install_kcptun_for_ss_ssr(){
         echo
         while true
         do
-            def_kcptun_mtu="1350"
+            def_kcptun_mtu="1400"
             echo -e "Please input MTU for kcptun [900-1400]"
             read -p "(Default mtu: ${def_kcptun_mtu}):" set_kcptun_mtu
             [ -z "$set_kcptun_mtu" ] && set_kcptun_mtu="${def_kcptun_mtu}"
@@ -1428,13 +1428,13 @@ pre_install_kcptun_for_ss_ssr(){
 uninstall_kcptun_for_ss_ssr(){
     Get_Dist_Name
     fun_clangcn "clear"
-    def_Uninstall_Select="5"
+    def_Uninstall_Select="4"
     echo -e "${COLOR_YELOW}You have 5 options for your kcptun/ss/ssr Uninstall${COLOR_END}"
 #    echo "1: Uninstall Shadowsocks-libev"
 #    echo "2: Uninstall ShadowsocksR(python)"
     echo "3: Uninstall KCPTUN"
-    echo "4: Uninstall All"
-    echo "5: Exit,cancell uninstall [default]"
+    echo "4: Uninstall All [default]"
+    echo "5: Exit,cancell uninstall"
     read -p "Enter your choice (1, 2, 3, ... or exit. default [${def_Uninstall_Select}]): " Uninstall_Select
     case "${Uninstall_Select}" in
     1)
